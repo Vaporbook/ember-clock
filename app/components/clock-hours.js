@@ -20,6 +20,13 @@ export default Ember.Component.extend({
   },
   hours: 0,
 
+  display: Ember.computed('hours', function () {
+
+    let s = parseInt(this.get('hours'));
+    return (s <= 10) ? "0"+s : this.get('hours');
+    
+  }),
+
   message: '',
 
   actions: {

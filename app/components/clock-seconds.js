@@ -29,7 +29,8 @@ export default Ember.Component.extend({
 
   display: Ember.computed('seconds', function () {
 
-    return this.get('seconds');
+    let s = parseInt(this.get('seconds'));
+    return (s <= 10) ? "0"+s : this.get('seconds');
     
   }),
 
