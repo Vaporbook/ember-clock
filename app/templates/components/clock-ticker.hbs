@@ -1,0 +1,50 @@
+
+<style>
+
+body {
+	background-color:black;
+}
+
+.clock-digital {
+	font-size: 4em;
+	text-align: center;
+	font-family: monospace;
+	color:green;
+	background-color:black;
+}
+.clock-digital div {
+	display:inline-block;
+	vertical-align: middle;
+}
+.hours {
+
+}
+.mins {
+	
+}
+.secs {
+	
+}
+.sep {
+	font-size: 50%;
+}
+
+</style>
+
+
+
+<div class="clock-digital">
+<span class="hours">
+{{ clock-hours }}
+</span>
+<span class="sep">:</span>
+<span class="mins">
+{{ clock-minutes }}
+</span>
+<span class="sep">:</span>
+<span class="secs">
+{{ clock-seconds }}
+</span>
+</div>
+
+{{yield}}
