@@ -19,6 +19,8 @@ export default Ember.Component.extend({
 
   },
 
+  ticker: Ember.inject.service(),
+
   didRender: function () {
 
 

@@ -15,6 +15,22 @@ export default Ember.Component.extend({
 
   },
 
+  tickerService: Ember.inject.service('ticker'),
+
+  listen: function() {
+    this.get('tickerService').on('activity', this, 'logActivity');
+  }.on('init'),
+
+  logActivity(activity) {
+    this.get('activities').push(activity);
+  },
+
+  // remember to remove what you bind upon component destruction
+  cleanup: function() {
+    this.get('feedService').off('activity', this, 'logActivity');
+  }.on('willDestroyElement'),
+
+
   didRender: function () {
 
     console.log(self.attrs);
